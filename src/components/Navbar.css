@@ -1,0 +1,16 @@
+/* Navbar.css */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btns {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Login-btn {
+    cursor: pointer;
+}

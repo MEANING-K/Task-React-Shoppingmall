@@ -1,0 +1,12 @@
+.add-to-cart {
+    border: rgb(198, 207, 219) solid 1px;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+}
+
+.card-price {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
