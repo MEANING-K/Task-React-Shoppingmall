@@ -1,12 +1,30 @@
-.add-to-cart {
-    border: rgb(198, 207, 219) solid 1px;
-    padding: 5px;
-    border-radius: 4px;
+.card {
     display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    width: 280px;
+    height: 330px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+}
+
+.card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; /* 최대 1줄까지 표시합니다 */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 넘치는 부분은 ...으로 처리합니다 */
+    font-weight: bold;
 }
 
 .card-price {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
+    margin-top: auto; /* 나머지 공간을 아래로 밀어내기 위해 auto로 설정 */
 }

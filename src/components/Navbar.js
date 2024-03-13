@@ -1,4 +1,3 @@
-// Navbar.js
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import React from 'react';
@@ -9,11 +8,17 @@ import { FaPowerOff } from "react-icons/fa6";
 import Login from '../Login.js';
 
 function Navbar() {
-    const navigate = useNavigate();
+    const navigate = useNavigate(); // useNavigate 훅 사용
     const [showLogin, setShowLogin] = useState(false);
 
     const handleLoginClick = () => {
-        setShowLogin(true);
+        // 로그인 버튼 클릭 시 리다이렉트
+        navigate('/login');
+    };
+
+    const handleLogoClick = () => {
+        // MEANING-K 클릭 시 리다이렉트
+        navigate('/');
     };
 
     const handleCloseLogin = () => {
@@ -23,8 +28,8 @@ function Navbar() {
     return (
         <div>
             <div className="nav p-3 w-screen mx-auto bg-black text-white font-bold z-10 ">
-                <button>MEANING-K</button>
-                <div className="btns space-x-3">
+                <button onClick={handleLogoClick}>MEANING-K</button> {/* MEANING-K 클릭 시 리다이렉트 */}
+                <div className="btns space-x-3 mr-3">
                     <button>
                         <FaShoppingCart className="btn-icon size-5" />
                     </button>

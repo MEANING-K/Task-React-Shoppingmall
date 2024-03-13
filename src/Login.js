@@ -42,8 +42,9 @@ function Login({ onClose }) {
                 <input type="password" id="login-password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
                 <button id="signin" onClick={handleLogin}>Sign In</button>
                 <button id="signup" onClick={handleLogin}>Sign Up</button>
+                <button id="google" onClick={handleGoogleLogin}>Login with Google</button>
             </form>
-            <button id="google" onClick={handleGoogleLogin}>Login with Google</button>
+
         </div>
     );
 }
