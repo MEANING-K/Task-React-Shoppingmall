@@ -1,8 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth"; // auth 관련 함수들을 올바르게 가져옵니다.
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyBh95pSmiFQqfCGoGVGA3wFeKwBDwCF_zA",
     authDomain: "task-react-shoppingmall.firebaseapp.com",
@@ -12,10 +10,7 @@ const firebaseConfig = {
     appId: "1:727931102902:web:df49042f54fe4289512817"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// auth 설정 필수!!
 const auth = getAuth();
 
 //Email 로그인

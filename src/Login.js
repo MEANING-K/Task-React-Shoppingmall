@@ -1,9 +1,10 @@
-// Login.js
 import React, { useState } from 'react';
 import { loginEmail, signupEmail, loginGoogle } from './firebase.js';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 function Login({ onClose }) {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -13,16 +14,19 @@ function Login({ onClose }) {
             loginEmail(email, password)
                 .then((result) => {
                     const user = result.user;
-                    onClose();
+                    if (typeof onClose === 'function') {
+                        onClose();
+                    }
+                    navigate('/');
                 })
-                .catch((error) => console.log(error));
+                .catch((error) => {
+                    console.log(error);
+                    alert('존재하지 않는 이메일 또는 비밀번호입니다.');
+                    setEmail('');
+                    setPassword('');
+                });
         } else if (e.target.id === 'signup') {
-            signupEmail(email, password)
-                .then((result) => {
-                    const user = result.user;
-                    onClose();
-                })
-                .catch((error) => console.log(error));
+            navigate('/join');
         }
     };
 
@@ -30,7 +34,10 @@ function Login({ onClose }) {
         loginGoogle()
             .then((result) => {
                 const user = result.user;
-                onClose();
+                if (typeof onClose === 'function') {
+                    onClose();
+                }
+                navigate('/');
             })
             .catch((error) => console.log(error));
     };
@@ -44,7 +51,6 @@ function Login({ onClose }) {
                 <button id="signup" onClick={handleLogin}>Sign Up</button>
                 <button id="google" onClick={handleGoogleLogin}>Login with Google</button>
             </form>
-
         </div>
     );
 }
