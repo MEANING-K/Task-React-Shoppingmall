@@ -1,16 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import './List.css';
 
-function List() {
-    const [products, setProducts] = useState([]);
+function List({ selectedCategory }) {
+    const [filteredProducts, setFilteredProducts] = useState([]);
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-            .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error('상품을 가져오는 중 오류가 발생했습니다:', error));
-    }, []);
+        const fetchProductsByCategory = async () => {
+            let apiUrl;
+            switch (selectedCategory) {
+                case 'All':
+                    apiUrl = 'https://fakestoreapi.com/products';
+                    break;
+                case 'Electronics':
+                    apiUrl = 'https://fakestoreapi.com/products/category/electronics';
+                    break;
+                case 'Jewelry':
+                    apiUrl = 'https://fakestoreapi.com/products/category/jewelery';
+                    break;
+                case 'Men':
+                    apiUrl = 'https://fakestoreapi.com/products/category/men\'s%20clothing';
+                    break;
+                case 'Women':
+                    apiUrl = 'https://fakestoreapi.com/products/category/women\'s%20clothing';
+                    break;
+                default:
+                    apiUrl = 'https://fakestoreapi.com/products';
+            }
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                setFilteredProducts(data);
+            } catch (error) {
+                console.error('상품을 가져오는 중 오류가 발생했습니다:', error);
+            }
+        };
+
+        fetchProductsByCategory();
+    }, [selectedCategory]);
 
     useEffect(() => {
         const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
@@ -27,9 +55,9 @@ function List() {
 
     return (
         <div className='m-4'>
-            <p className='mb-3 text-slate-400 font-semibold'>Showing: {products.length} items</p>
+            <p className='mb-3 text-slate-400 font-semibold'>Showing: {filteredProducts.length} items</p>
             <div className="row row-cols-1 row-cols-md-4 g-4">
-                {products.map(product => (
+                {filteredProducts.map(product => (
                     <div className="col" key={product.id}>
                         <div className="card h-100">
                             <img src={product.image} className="card-img-top" alt={product.title} />
