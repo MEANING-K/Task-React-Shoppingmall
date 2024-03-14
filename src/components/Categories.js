@@ -5,7 +5,7 @@ function Categories() {
 
     return (
         <div>
-            <h1 className='my-5 font-bold text-3xl text-center'>Products</h1>
+            <h1 className='my-5 font-bold text-5xl text-center'>Products</h1>
             <div className='categories-btn mb-4 font-bold space-x-6'>
                 <button className='ct-btn'>All</button>
                 <button className='ct-btn'>Electronics</button>
