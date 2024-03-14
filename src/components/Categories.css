@@ -16,5 +16,10 @@ height: 3rem;
 {
    background-color: rgb(148,163,184);
    color: white;
-   transition: 0.1s;
+   transition: 0.2s;
+}
+
+.categories-btn .active {
+    background-color: rgb(148, 163, 184);
+    color: white;
 }

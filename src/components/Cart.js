@@ -32,6 +32,11 @@ function Cart() {
         saveCartToLocalStorage(updatedCart);
     };
 
+    const handleCheckout = () => {
+        setCartItems([]); // 카트 비우기
+        localStorage.removeItem('cartItems'); // 로컬스토리지에서 카트 아이템 제거
+    };
+
     return (
         <div>
             <div className='cart-title my-5 font-bold text-5xl text-center'>
@@ -67,6 +72,7 @@ function Cart() {
                     ))}
                     <div className="cart-total text-xl font-semibold">
                         <p>Total: ${cartItems.reduce((total, item) => total + (item.price * item.quantity), 0).toFixed(2).replace(/\.?0+$/, '')}</p>
+                        <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
                     </div>
                 </div>
             )}

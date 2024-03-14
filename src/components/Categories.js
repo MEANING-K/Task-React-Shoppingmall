@@ -1,5 +1,3 @@
-// Categories.js
-
 import React, { useState } from 'react';
 import './Categories.css';
 

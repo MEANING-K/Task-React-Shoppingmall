@@ -89,8 +89,20 @@
 }
 
 .cart-total {
+    display: flex;
     margin-right: 3rem;
     float: right;
+    align-items: center;
+}
+
+.checkout-button {
+    display: flex;
+    background-color: rgb(148, 163, 184);
+    color: white;
+    padding: 5px 10px;
+    width: 110px;
+    border-radius: 4px;
+    margin-left: 1rem;
 }
 
 .empty {
