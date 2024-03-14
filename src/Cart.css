@@ -1,0 +1,60 @@
+.cart-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid rgb(148, 163, 184);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1)
+}
+
+.cart-title {
+    text-align: center;
+}
+
+.cart-item-image {
+    width: 10%;
+    object-fit: cover;
+    margin-right: 20px;
+    /* 변경된 간격 */
+}
+
+.cart-item-details {
+    margin-left: 20px;
+}
+
+.cart-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cart-item-price {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.delete-button {
+    background-color: rgb(148, 163, 184);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    width: 60px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    /* 아이콘을 가운데 정렬하기 위해 */
+    align-items: center;
+    /* 아이콘을 세로로 가운데 정렬하기 위해 */
+    justify-content: center;
+    /* 아이콘을 가로로 가운데 정렬하기 위해 */
+    margin-top: 10px;
+}

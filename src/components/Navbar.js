@@ -25,13 +25,17 @@ function Navbar() {
         setShowLogin(false);
     };
 
+    const handleCart = () => {
+        navigate('/cart');
+    }
+
     return (
         <div>
             <div className="nav p-3 w-screen mx-auto bg-black text-white font-bold z-10 ">
                 <button onClick={handleLogoClick}>MEANING-K</button> {/* MEANING-K 클릭 시 리다이렉트 */}
                 <div className="btns space-x-3 mr-3">
-                    <button>
-                        <FaShoppingCart className="btn-icon size-5" />
+                    <button onClick={handleCart}>
+                        <FaShoppingCart className="$cart btn-icon size-5" />
                     </button>
                     <button>
                         <IoPersonCircle className="btn-icon size-6" />

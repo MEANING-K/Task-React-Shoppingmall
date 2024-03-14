@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.js';
 import Categories from './components/Categories.js';
 import List from './components/List.js';
 import Login from './Login.js';
+import Cart from './Cart.js';
 import "tailwindcss/tailwind.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -23,6 +24,12 @@ function App() {
           <>
             <Navbar />
             <Login />
+          </>
+        } />
+        <Route path="/cart" element={
+          <>
+            <Navbar />
+            <Cart />
           </>
         } />
       </Routes>

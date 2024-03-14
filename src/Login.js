@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { loginEmail, signupEmail, loginGoogle } from './firebase.js';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import { FcGoogle } from "react-icons/fc";
+
 
 function Login({ onClose }) {
     const navigate = useNavigate();
@@ -44,12 +46,17 @@ function Login({ onClose }) {
 
     return (
         <div id="login-area" className="full-screen">
+            <div className="login-title my-5 font-bold text-3xl text-center">
+                <h1>Login</h1>
+            </div>
             <form id="buttons">
                 <input type="email" id="login-email" placeholder="Email" required onChange={(e) => setEmail(e.target.value)} />
                 <input type="password" id="login-password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
                 <button id="signin" onClick={handleLogin}>Sign In</button>
                 <button id="signup" onClick={handleLogin}>Sign Up</button>
-                <button id="google" onClick={handleGoogleLogin}>Login with Google</button>
+                <button id="google" onClick={handleGoogleLogin}>
+                    <FcGoogle /><span>Login with Google</span>
+                </button>
             </form>
         </div>
     );
