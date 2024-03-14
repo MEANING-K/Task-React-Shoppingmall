@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './Cart.css';
+import { FaMinus, FaPlus } from "react-icons/fa";
 import { FaTrashAlt } from "react-icons/fa";
 
 function Cart() {
-
     const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
         if (savedCartItems) {
-            setCartItems(savedCartItems);
+            // 저장된 상품들을 가져와 초기 수량을 1로 설정
+            const updatedCartItems = savedCartItems.map(item => ({ ...item, quantity: 1 }));
+            setCartItems(updatedCartItems);
         }
     }, []);
 
@@ -41,12 +43,19 @@ function Cart() {
                             <p className="cart-item-price">{`$ ${item.price}`}</p>
                             <button className="delete-button" onClick={() => removeFromCart(index)}><FaTrashAlt /></button>
                         </div>
-                        <div>
+                        <div className="quantity-controls">
+                            <div className="decrease-quantity" onClick={() => changeQuantity(index, Math.max(0, item.quantity - 1))}>
+                                <FaMinus />
+                            </div>
                             <input
                                 type="number"
+                                className="quantity-input"
                                 value={item.quantity}
                                 onChange={(e) => changeQuantity(index, parseInt(e.target.value))}
                             />
+                            <div className="increase-quantity" onClick={() => changeQuantity(index, item.quantity + 1)}>
+                                <FaPlus />
+                            </div>
                         </div>
                     </div>
                 ))}

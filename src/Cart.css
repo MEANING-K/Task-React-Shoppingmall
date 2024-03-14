@@ -23,7 +23,7 @@
 .cart-item-image {
     width: 10%;
     object-fit: cover;
-    margin-right: 20px;
+    margin: auto 20px;
     /* 변경된 간격 */
 }
 
@@ -39,6 +39,36 @@
 .cart-item-price {
     font-size: 1rem;
     margin-top: 10px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+     margin-left: auto;
+     /* 왼쪽 여백을 auto로 설정하여 오른쪽으로 이동*/
+     padding: 0 20px;
+    /* 좌우 여백 추가 */
+}
+
+.quantity-controls div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(148, 163, 184);
+    color: #fff;
+    cursor: pointer;
+}
+
+.decrease-quantity {
+    margin-right: 14px;
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
 }
 
 .delete-button {
