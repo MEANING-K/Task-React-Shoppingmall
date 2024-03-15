@@ -41,7 +41,7 @@ function ProductDetail() {
             <img className='detail-product-img' src={product.image} alt={product.title} />
             <div className='detail-etc ml-11'>
                 <h2 className='detail-product-title'>{product.title}</h2>
-                <p className='detail-product-description'>{product.description}</p>
+                <p className='detail-product-description'>{`  ${product.description}`}</p>
                 <p className='detail-product-price'>{`$ ${product.price}`}</p>
                 <div className="detail-button-container">
                     <button className="add-to-cart-button" onClick={() => addToCart(product)}>Add to cart</button>

@@ -26,6 +26,10 @@ function Cart() {
     };
 
     const changeQuantity = (index, newQuantity) => {
+        if (newQuantity <= 0) {
+            alert('수량은 1개 이상부터 가능합니다.'); // 알림 창 표시
+            newQuantity = 1; // 값이 0 이하일 때 1로 설정
+        }
         const updatedCart = [...cartItems];
         updatedCart[index].quantity = newQuantity;
         setCartItems(updatedCart);

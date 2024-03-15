@@ -67,7 +67,14 @@
 
 .quantity-input {
     width: 50px;
-    text-align: center;
+    margin-left: 25px;
+}
+
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 .delete-button {

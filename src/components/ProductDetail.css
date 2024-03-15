@@ -13,14 +13,47 @@
 
 .detail-product-title {
     font-size: 24px;
+    font-weight: 800;
     margin-bottom: 10px;
 }
 
 .detail-product-description {
     font-size: 16px;
     margin-bottom: 10px;
+    color: #6b7280;
 }
 
 .detail-product-price {
     font-size: 18px;
+    font-weight: 600;
+}
+
+.add-to-cart-button {
+    background-color: rgb(148, 163, 184);
+    color: white;
+    padding: 5px 10px;
+    width: 110px;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.add-to-cart-button:hover {
+    background-color: #6b7280;
+    color: white;
+    transition: 0.2s;
+}
+
+.go-to-cart-button {
+    background-color: rgb(148, 163, 184);
+    color: white;
+    padding: 5px 10px;
+    width: 110px;
+    border-radius: 4px;
+    margin-left: 1rem;
+}
+
+.go-to-cart-button:hover {
+     background-color: #6b7280;
+     color: white;
+    transition: 0.2s;
 }

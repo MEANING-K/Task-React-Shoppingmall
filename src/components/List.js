@@ -53,6 +53,7 @@ function List({ selectedCategory }) {
         const updatedCart = [...cartItems, product];
         setCartItems(updatedCart);
         localStorage.setItem('cartItems', JSON.stringify(updatedCart));
+        alert('상품이 장바구니에 추가되었습니다.'); // 상품이 장바구니에 추가되었다는 알림을 표시합니다.
     };
 
     const handleProductClick = (productId) => {
