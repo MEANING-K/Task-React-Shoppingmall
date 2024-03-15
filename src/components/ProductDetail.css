@@ -1,0 +1,26 @@
+.detail-page {
+    display: flex;
+    align-items: center;
+}
+
+.detail-product-img {
+    width: 28%;
+}
+
+.detail-etc {
+    margin-left: 20px;
+}
+
+.detail-product-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.detail-product-description {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.detail-product-price {
+    font-size: 18px;
+}

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // useNavigate를 import합니다.
 import './List.css';
 
 function List({ selectedCategory }) {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [cartItems, setCartItems] = useState([]);
+    const navigate = useNavigate(); // useNavigate 훅을 사용합니다.
 
     useEffect(() => {
         const fetchProductsByCategory = async () => {
@@ -53,18 +55,29 @@ function List({ selectedCategory }) {
         localStorage.setItem('cartItems', JSON.stringify(updatedCart));
     };
 
+    const handleProductClick = (productId) => {
+        // 해당 상품의 상세 페이지로 이동하는 함수
+        navigate(`/product/${productId}`);
+    };
+
+    const handleAddToCart = (event, product) => {
+        event.stopPropagation(); // 이벤트 전파 방지
+        addToCart(product); // addToCart 함수 호출
+    };
+
     return (
         <div className='m-4'>
             <p className='mb-3 text-slate-400 font-semibold'>Showing: {filteredProducts.length} items</p>
             <div className="row row-cols-1 row-cols-md-4 g-4">
                 {filteredProducts.map(product => (
-                    <div className="col" key={product.id}>
+                    <div className="col" key={product.id} onClick={() => handleProductClick(product.id)}>
+                        {/* 각 상품을 클릭하면 handleProductClick 함수가 호출되도록 함 */}
                         <div className="card h-100">
                             <img src={product.image} className="card-img-top" alt={product.title} />
                             <div className="card-body d-flex flex-column h-40">
                                 <h5 className="card-title">{product.title}</h5>
                                 <div className="cart-price d-flex justify-content-between">
-                                    <button className="add-to-cart" onClick={() => addToCart(product)}>Add to cart</button>
+                                    <button className="add-to-cart" onClick={(e) => handleAddToCart(e, product)}>Add to cart</button>
                                     <p className="card-price">{`$ ${product.price}`}</p>
                                 </div>
                             </div>

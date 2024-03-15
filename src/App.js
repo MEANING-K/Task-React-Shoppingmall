@@ -1,5 +1,3 @@
-// App.js
-
 import { Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
 import './App.css';
@@ -8,6 +6,7 @@ import Categories from './components/Categories.js';
 import List from './components/List.js';
 import Login from './Login.js';
 import Cart from './components/Cart.js';
+import ProductDetail from './components/ProductDetail.js'; // ProductDetail 컴포넌트 임포트
 import "tailwindcss/tailwind.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -25,7 +24,7 @@ function App() {
           <>
             <Navbar />
             <Categories onSelectCategory={handleCategorySelect} />
-            <List selectedCategory={selectedCategory} /> {/* 선택된 카테고리를 List 컴포넌트로 전달 */}
+            <List selectedCategory={selectedCategory} />
           </>
         } />
         <Route path="/login" element={
@@ -40,6 +39,12 @@ function App() {
             <Cart />
           </>
         } />
+        <Route path="/product/:productId" element={
+          <>
+            <Navbar />
+            <ProductDetail />
+          </>
+        } /> {/* productId 매개변수를 전달하여 상세 페이지로 이동 */}
       </Routes>
       <footer />
     </div>

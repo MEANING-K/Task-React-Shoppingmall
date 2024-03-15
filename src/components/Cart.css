@@ -90,6 +90,7 @@
 
 .cart-total {
     display: flex;
+    padding-bottom: 1rem;
     margin-right: 3rem;
     float: right;
     align-items: center;
