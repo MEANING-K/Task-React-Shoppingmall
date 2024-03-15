@@ -1,3 +1,4 @@
+// Cart.js
 import React, { useState, useEffect } from 'react';
 import './Cart.css';
 import { FaMinus, FaPlus, FaTrashAlt } from "react-icons/fa";
@@ -27,8 +28,8 @@ function Cart() {
 
     const changeQuantity = (index, newQuantity) => {
         if (newQuantity <= 0) {
-            alert('수량은 1개 이상부터 가능합니다.'); // 알림 창 표시
-            newQuantity = 1; // 값이 0 이하일 때 1로 설정
+            alert('수량은 1개 이상부터 가능합니다.');
+            newQuantity = 1;
         }
         const updatedCart = [...cartItems];
         updatedCart[index].quantity = newQuantity;
@@ -37,8 +38,8 @@ function Cart() {
     };
 
     const handleCheckout = () => {
-        setCartItems([]); // 카트 비우기
-        localStorage.removeItem('cartItems'); // 로컬스토리지에서 카트 아이템 제거
+        setCartItems([]);
+        localStorage.removeItem('cartItems');
     };
 
     return (

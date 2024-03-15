@@ -15,17 +15,40 @@
     cursor: pointer;
 }
 
+/* Navbar.css */
+
+/* 장바구니 아이콘과 상품 개수를 감싸는 부모 요소 */
 .cart-icon {
     position: relative;
+    /* 상대 위치 설정 */
+    display: inline-block;
+    /* 인라인 블록 요소로 설정 */
 }
 
-.cart-counter {
+/* 상품 개수를 표시하는 동그라미 모양의 버튼 */
+.cart-item-count {
     position: absolute;
-    top: -8px;
-    right: -8px;
-    background-color: red;
+    /* 절대 위치 설정 */
+    top: -10px;
+    /* 상단으로 약간 이동 */
+    right: -18px;
+    /* 우측으로 약간 이동 */
+    background-color: rgb(148, 163, 184);
+    /* 배경색 설정 */
     color: white;
+    /* 글자색 설정 */
     border-radius: 50%;
-    padding: 5px;
+    /* 원형으로 설정 */
+    width: 17px;
+    /* 너비 설정 */
+    height: 17px;
+    /* 높이 설정 */
     font-size: 12px;
+    /* 폰트 크기 설정 */
+    display: flex;
+    /* 플렉스 요소로 설정하여 가운데 정렬 */
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
 }
